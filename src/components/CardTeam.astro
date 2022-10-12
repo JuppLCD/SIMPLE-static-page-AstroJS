@@ -1,0 +1,75 @@
+---
+export interface Props {
+	person: {
+		img: string;
+		name: string;
+		position: string;
+		description: string;
+		socials: {
+			facebook: string;
+			twitter: string;
+			instagram: string;
+			linkedin: string;
+		};
+	};
+	special?: boolean;
+}
+const { person, special } = Astro.props;
+---
+
+<div class={`cardTeam ${special ?? 'card--color'}`}>
+	<img src={person.img} alt={`Picture of ${person.name} - ${person.position} in COMPANY_NAME`} />
+	<p>{person.position}</p>
+	<h3>{person.name}</h3>
+	<p>
+		{person.description}
+	</p>
+	<div class='social'>
+		<a href={person.socials.facebook}>
+			<i class='fab fa-facebook-f'></i>
+		</a>
+		<a href={person.socials.twitter}>
+			<i class='fab fa-twitter'></i>
+		</a>
+		<a href={person.socials.instagram}>
+			<i class='fab fa-instagram'></i>
+		</a>
+		<a href={person.socials.linkedin}>
+			<i class='fab fa-linkedin-in'></i>
+		</a>
+	</div>
+</div>
+
+<style lang='scss'>
+	@import './../sass/variables';
+
+	.cardTeam {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		min-width: 250px;
+		max-width: 300px;
+		padding: 30px 10px;
+		margin: 0 10px;
+		margin-top: 50px;
+		border-radius: 30px;
+		box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.082);
+		p {
+			margin: 10px;
+			font-size: 0.8rem;
+		}
+		i {
+			font-size: 20px;
+			margin: 0 10px;
+		}
+		&.card--color {
+			background-color: $colorPrimario;
+		}
+	}
+	img {
+		width: 240px;
+		height: 240px;
+		border-radius: 50px;
+	}
+</style>

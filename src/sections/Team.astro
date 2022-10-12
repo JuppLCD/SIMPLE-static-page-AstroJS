@@ -1,0 +1,75 @@
+---
+import Container from '@components/Container.astro';
+import CardTeam from '@components/CardTeam.astro';
+
+const persons = [
+	{
+		person: {
+			img: 'https://www.blogdelfotografo.com/wp-content/uploads/2014/09/Libro-Retrato.jpg',
+			name: 'MARÍA BROWN',
+			position: 'líder creativo',
+			description:
+				'Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum',
+			socials: {
+				facebook: '#',
+				twitter: '#',
+				instagram: '#',
+				linkedin: '#',
+			},
+		},
+	},
+	{
+		person: {
+			img: 'https://i2.wp.com/hipertextual.com/wp-content/uploads/2015/11/Ni%C3%B1a-afgana.jpg?fit=1480%2C1064&ssl=1',
+			name: 'MARÍA BROWN',
+			position: 'líder creativo',
+			description:
+				'Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum',
+			socials: {
+				facebook: '#',
+				twitter: '#',
+				instagram: '#',
+				linkedin: '#',
+			},
+		},
+		special: true,
+	},
+
+	{
+		person: {
+			img: 'https://i2.wp.com/fotogasteiz.com/blog/wp-content/uploads/2019/12/FTG5402-Editar-scaled.jpg?fit=747%2C1120&ssl=1',
+			name: 'MARÍA BROWN',
+			position: 'líder creativo',
+			description:
+				'Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum',
+			socials: {
+				facebook: '#',
+				twitter: '#',
+				instagram: '#',
+				linkedin: '#',
+			},
+		},
+	},
+];
+---
+
+<section class='team'>
+	<Container>
+		<div class='grid_team'>
+			{persons.map((person) => <CardTeam {...person} />)}
+		</div>
+	</Container>
+</section>
+<style lang='scss'>
+	@import './../sass/variables';
+
+	.team {
+		background-color: $backgroundColorOne;
+	}
+	.grid_team {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+</style>

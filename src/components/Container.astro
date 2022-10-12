@@ -1,0 +1,19 @@
+---
+export interface Props {
+	styles?: string;
+}
+
+const { styles } = Astro.props;
+---
+
+<div class='container' style={styles}>
+	<slot />
+</div>
+<style>
+	.container {
+		width: 100%;
+		max-width: 1040px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+</style>

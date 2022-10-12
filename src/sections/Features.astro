@@ -1,0 +1,60 @@
+---
+import CardIcon from '@components/CardIcon.astro';
+import Container from '@components/Container.astro';
+
+const features = [
+	{
+		icon: 'fas fa-server',
+		title: 'ALMACENAMIENTO ILIMITADO',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.',
+	},
+	{
+		icon: 'fas fa-infinity',
+		title: 'ANCHO DE BANDA NO MEDIDO',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.',
+	},
+	{
+		icon: 'fas fa-globe',
+		title: 'REGISTRO DE DOMINIO',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.',
+	},
+];
+---
+
+<section class='features'>
+	<Container styles='text-align: center; padding : 0 20px;'>
+		<img
+			src='https://images.unsplash.com/photo-1508051609366-f3b0a25123d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=396&q=80'
+			alt='Escaleras'
+		/>
+		<div class='features__grid'>
+			{features.map((feature) => <CardIcon {...feature} />)}
+		</div>
+	</Container>
+
+	<style lang='scss'>
+		@import './../sass/variables';
+		.features {
+			background-color: $backgroundColorOne;
+			margin-bottom: 75px;
+			box-sizing: border-box;
+
+			img {
+				display: block;
+				border-radius: 20px;
+				width: 250px;
+				height: 350px;
+				margin: 50px auto;
+			}
+
+			&__grid {
+				width: 100%;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+		}
+	</style>
+</section>

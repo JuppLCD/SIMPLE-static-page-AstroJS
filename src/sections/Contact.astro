@@ -1,0 +1,87 @@
+---
+import Container from '@components/Container.astro';
+import CardQuote from '@components/CardQuote.astro';
+import Button from '@components/Button.astro';
+---
+
+<section class='contact'>
+	<Container>
+		<div class='flex'>
+			<form action='#' class='contact__form'>
+				<div class='inputs'>
+					<label for='email'>E-mail</label>
+					<input type='email' id='email' placeholder='Coloque un email valido' />
+				</div>
+				<div class='inputs'>
+					<label for='name'>Name</label>
+					<input type='text' id='name' placeholder='Coloque su nombre' />
+				</div>
+				<div class='inputs'>
+					<label for='date'>Date</label>
+					<input type='date' id='date' />
+				</div>
+				<div class='inputs'>
+					<label for='phone'>Phone</label>
+					<input type='tel' id='phone' placeholder='Nro telefonico' />
+				</div>
+				<div class='inputs'>
+					<label for='message'>Message</label>
+					<textarea id='message' cols='30' rows='10' placeholder='Coloque su mensaje aqui'></textarea>
+				</div>
+				<Button type='submit'>Enviar</Button>
+			</form>
+
+			<CardQuote
+				quote='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat inventore odio recusandae minus corrupti eum voluptate eveniet provident dignissimos dolore, eos aliquam esse dolorem sequi cumque voluptatem temporibus molestiae debitis totam ipsam ab nostrum et a! Officia commodi optio quo accusamus facere, dicta magni quibusdam perferendis atque excepturi nisi delectus aliquam maxime sunt iusto praesentium asperiores laudantium voluptate eum minima, dolorem exercitationem ratione voluptatum quidem. Quidem, necessitatibus, error autem, cupiditate in aspernatur ipsum molestias laboriosam esse facere at amet atque velit totam aliquam! Ab cum repellendus quisquam numquam atque. Temporibus laboriosam officiis reprehenderit facere illum vel debitis adipisci fuga optio!'
+			/>
+		</div>
+	</Container>
+</section>
+
+<style lang='scss'>
+	@import './../sass/variables';
+
+	.contact {
+		padding: 70px 5px;
+		background-color: $backgroundColorTwo;
+
+		.flex {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		&__form {
+			margin-bottom: 90px;
+			max-width: 320px;
+			min-width: 280px;
+			font-family: $fontstext;
+			font-weight: 300;
+			font-size: 0.8rem;
+
+			.inputs {
+				margin: 20px 5px;
+				width: 100%;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			input,
+			textarea {
+				width: 95%;
+				border: none;
+				border-bottom: 1px solid #000;
+				background-color: inherit;
+				padding: 10px 5px;
+			}
+
+			textarea {
+				resize: none;
+			}
+		}
+	}
+</style>

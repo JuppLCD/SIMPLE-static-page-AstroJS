@@ -1,0 +1,56 @@
+---
+export interface Props {
+	title: string;
+}
+import Footer from '@sections/Footer.astro';
+import Header from '@sections/Header.astro';
+
+import './../styles/normalize.css';
+
+const { title } = Astro.props;
+
+const links = [
+	{
+		title: 'Titulo 1',
+		href: '#',
+	},
+	{
+		title: 'Titulo 2',
+		href: '#',
+	},
+];
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- ICONS -->
+		<link
+			rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
+			integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=='
+			crossorigin='anonymous'
+			referrerPolicy='no-referrer'
+		/>
+		<!-- FONTS -->
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap'
+			rel='stylesheet'
+		/>
+	</head>
+	<body>
+		<Header links={links} />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

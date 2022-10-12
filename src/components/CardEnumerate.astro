@@ -1,0 +1,57 @@
+---
+export interface Props {
+	n: number;
+	title: string;
+	text: string;
+}
+const { n, title, text } = Astro.props;
+
+const number = n < 10 ? '0' + String(n) : String(n);
+---
+
+<div class='card_enumerate'>
+	<div class='card_enumerate__number'><p>{number}</p></div>
+	<div class='card_enumerate__text'>
+		<h3>{title}</h3>
+		<p>{text}</p>
+	</div>
+</div>
+
+<style lang='scss'>
+	@import './../sass/variables';
+
+	.card_enumerate {
+		margin-bottom: 50px;
+		display: flex;
+		max-width: 500px;
+
+		&__number {
+			width: 60px;
+			min-width: 60px;
+			height: 60px;
+			background-color: #fff;
+			border-radius: 50%;
+			margin-right: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			p {
+				font-size: 2.5rem;
+				color: $colorPrimario;
+				font-weight: 700;
+				font-family: sans-serif;
+			}
+		}
+
+		&__text {
+			color: black;
+			h3 {
+				font-size: 1rem;
+			}
+			p {
+				margin-top: 10px;
+			}
+		}
+	}
+</style>

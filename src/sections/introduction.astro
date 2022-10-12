@@ -1,0 +1,37 @@
+---
+import Banner from '@components/Banner.astro';
+import Container from '@components/Container.astro';
+import CardEnumerate from '@components/CardEnumerate.astro';
+
+const promises = [
+	{
+		title: 'SOPORTE ILIMITADO',
+		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+	},
+	{
+		title: 'ALTA CALIDAD',
+		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+	},
+];
+---
+
+<Banner url='https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/58ea579efbf452229a524246/Untitled-4.jpg'>
+	<Container styles='padding : 50px 0 50px 20px; '>
+		<h2 class='title'>De grandes a pequeños clientes, siempre prometo dos cosas:</h2>
+		<div>
+			{promises.map((promise, index) => <CardEnumerate {...promise} n={index + 1} />)}
+		</div>
+	</Container>
+</Banner>
+
+<style lang='scss'>
+	// .space {
+	// 	padding: 50px 0 50px 20px;
+	// }
+	.title {
+		max-width: 500px;
+		font-weight: 300;
+		font-size: 1.7rem;
+		margin-bottom: 60px;
+	}
+</style>

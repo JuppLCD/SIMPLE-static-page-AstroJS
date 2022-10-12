@@ -1,0 +1,36 @@
+---
+export interface Props {
+	quote: string;
+}
+const { quote } = Astro.props;
+---
+
+<div class='card_quote'>
+	<i class='fas fa-quote-right'></i>
+	<p>
+		{quote}
+	</p>
+</div>
+<style lang='scss'>
+	@import './../sass/variables';
+
+	.card_quote {
+		max-width: 300px;
+		background-color: $colorPrimario;
+		padding: 50px 30px;
+		border-radius: 30px;
+
+		p {
+			font-size: 1.2rem;
+			color: #fff;
+		}
+
+		i {
+			font-size: 60px;
+			display: block;
+			margin-left: 60%;
+			margin-bottom: -50px;
+			color: #d6edf2;
+		}
+	}
+</style>

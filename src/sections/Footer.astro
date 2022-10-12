@@ -1,0 +1,23 @@
+---
+import Container from '@components/Container.astro';
+---
+
+<footer class='footer'>
+	<Container>
+		<p>Diseño sacado de nicepage. ( clonado hecho por Lorenzo Canovas con fines practicos )</p>
+	</Container>
+</footer>
+<style lang='scss'>
+	@import './../sass/variables';
+	.footer {
+		background-color: $colorFooter;
+		padding: 50px 0;
+		text-align: center;
+		color: #fff;
+
+		p {
+			font-size: 0.8rem;
+			font-weight: 300;
+		}
+	}
+</style>

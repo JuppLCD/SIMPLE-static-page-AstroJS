@@ -1,0 +1,51 @@
+---
+import Container from '@components/Container.astro';
+---
+
+<section class='welcome'>
+	<Container styles='max-width:800px'>
+		<h2>Mensaje de bienvenida</h2>
+		<p>
+			Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. A lacus vestibulum sed arcu non. Dolor
+			magna eget est lorem ipsum dolor sit amet consectetur. Mauris pellentesque pulvinar pellentesque habitant morbi
+			tristique senectus. Nec feugiat nisl pretium fusce id. Justo laoreet sit amet cursus sit amet. Porta non pulvinar
+			neque laoreet suspendisse interdum consectetur libero.
+		</p>
+	</Container>
+</section>
+
+<style lang='scss'>
+	@import './../sass/variables';
+	.welcome {
+		text-align: center;
+		padding: 80px 20px;
+		position: relative;
+		background-color: $backgroundColorOne;
+
+		h2 {
+			margin: 20px 0;
+		}
+		p {
+			margin: 0 20px;
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 50px;
+			left: 0;
+			width: 20px;
+			height: calc(100% - 100px);
+			background-color: $colorPrimario;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			top: 50px;
+			right: 0;
+			width: 20px;
+			height: calc(100% - 100px);
+			background-color: $colorPrimario;
+		}
+	}
+</style>

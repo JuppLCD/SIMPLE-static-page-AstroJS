@@ -1,0 +1,66 @@
+---
+import Container from '@components/Container.astro';
+import CardInfo from '@components/CardInfo.astro';
+
+const infoCards = [
+	{
+		score: 236,
+		title: 'TAZAS DE CAFÉ',
+		text: 'Sample text. Click to select the text box. Click again or double click to start editing the text.',
+	},
+	{
+		score: 17,
+		title: 'PREMIOS GANADOS',
+		text: 'Sample text. Click to select the text box. Click again or double click to start editing the text.',
+	},
+	{
+		score: 108,
+		title: 'CLIENTES FELICES',
+		text: 'Sample text. Click to select the text box. Click again or double click to start editing the text.',
+	},
+	{
+		score: 150,
+		title: 'PROYECTOS TERMINADOS',
+		text: 'Sample text. Click to select the text box. Click again or double click to start editing the text.',
+	},
+];
+---
+
+<section class='info'>
+	<Container styles='max-width: 800px; padding : 0 10px;'>
+		<div class='info__texts'>
+			<h3>Sobre nosotros y nuestro trabajo</h3>
+			<p>
+				Quidem, necessitatibus, error autem, cupiditate in aspernatur ipsum molestias laboriosam esse facere at amet
+				atque velit totam aliquam! Ab cum repellendus quisquam numquam atque. Temporibus laboriosam officiis
+				reprehenderit facere illum vel debitis adipisci fuga optio!
+			</p>
+		</div>
+		<div class='info__grid'>
+			{infoCards.map((info) => <CardInfo {...info} />)}
+		</div>
+	</Container>
+</section>
+
+<style lang='scss'>
+	@import './../sass/variables';
+	.info {
+		background-color: $backgroundColorOne;
+		&__texts {
+			margin: 100px 0;
+			padding: 0 30px;
+			h3 {
+				font-size: 1.8rem;
+				margin-bottom: 20px;
+				font-weight: 300;
+			}
+		}
+		&__grid {
+			margin-bottom: 70px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+	}
+</style>
